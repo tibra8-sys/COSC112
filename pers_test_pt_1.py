@@ -29,8 +29,7 @@ def move_page():
 
 
 def question_pg1():
-
-   root = tk.Tk()
+    root = tk.Tk()
     questions_text = (
     "I tend to talk most during conversations.\n"
     "I feel comfortable around new people.\n"
