@@ -42,9 +42,10 @@ def collecting_responses(questions):
                 responses.append(int(answer))
                 break
             else:
-                print("Invalid input. Please enter a number between 1 and 5.")
+                print("Nice Try, but please enter a number between 1 and 5.")
     return responses
 
+# Another function created to interpret the trait scores and provide a description for what the highest score means about the user
 
 def get_trait_interpretation(trait_name, percentage):
     """
@@ -78,10 +79,10 @@ def get_trait_interpretation(trait_name, percentage):
         }
     }
     
-    # Determine if score is high, medium, or low
-    if percentage >= 66.7:
+    # Using and if, else, elif statement to classify if score is high, medium, or low, if it's above 70.7% it's high, below 40.3% it's low, otherwise it's medium. I chose these because it's the basic pass/fail module with testing in mind..
+    if percentage >= 70.7:
         level = 'high'
-    elif percentage <= 33.3:
+    elif percentage <= 40.3:
         level = 'low'
     else:
         level = 'medium'
@@ -107,7 +108,7 @@ def calculate_results(responses):
     }
 
     # Indices that need reverse scoring (1-5 scale): reversed_score = 6 - response
-    reverse_scored = {2, 9}  # question indices where higher score means lower trait (e.g., judging, procrastinating)
+    reverse_scored = {2, 9}  # question indices where higher score means lower trait (judging/procrastinating) (These are basically negative questions)
 
     scores = {}
     for trait, indices in trait_map.items():
